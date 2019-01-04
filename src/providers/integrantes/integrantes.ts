@@ -14,6 +14,6 @@ export class IntegrantesProvider {
     console.log('Hello IntegrantesProvider Provider');
   }
   getData() {
-    return this.http.get<ClaseIntegrantes[]>('URL a pegar');
+   // return this.http.get<ClaseIntegrantes[]>('URL a pegar');
    }
 }

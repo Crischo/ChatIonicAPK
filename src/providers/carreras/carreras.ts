@@ -16,6 +16,6 @@ export class CarrerasProvider {
     console.log('Hello CarrerasProvider Provider');
   }
   getData() {
-    return this.http.get<ClaseCarreras[]>('http://yavirac.edu.ec/ignug/server/chat/Carreras/leer');
+    return this.http.get<ClaseCarreras[]>('http://yavirac.edu.ec/ignug/server/carrera/leer');
    }
 }

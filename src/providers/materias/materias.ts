@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ChatMensaje } from '../../clases/Chat-Mensajes';
 import { ClaseMaterias } from '../../clases/Clase-Materias';
 
 /*
