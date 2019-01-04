@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { ChatMensaje } from '../../clases/Chat-Mensajes';
-import { ChatNombreSala } from '../../clases/Chat-Nombre-Sala';
+import { ClaseCarreras } from '../../clases/Clase-Carreras';
+
 
 /*
   Generated class for the CarrerasProvider provider.
@@ -13,12 +12,10 @@ import { ChatNombreSala } from '../../clases/Chat-Nombre-Sala';
 @Injectable()
 export class CarrerasProvider {
 
-  constructor(public http: HttpClient
-       ) {
+  constructor(public http: HttpClient) {
     console.log('Hello CarrerasProvider Provider');
   }
-
   getData() {
-    return this.http.get<ChatNombreSala[]>('http://yavirac.edu.ec/ignug/server/carrera/leer');
+    return this.http.get<ClaseCarreras[]>('http://yavirac.edu.ec/ignug/server/chat/Carreras/leer');
    }
 }

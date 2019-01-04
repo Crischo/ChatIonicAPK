@@ -14,8 +14,12 @@ import { firebase } from '../constantes/credenciales';
 //firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 import { CarrerasProvider } from '../providers/carreras/carreras';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MateriasProvider } from '../providers/materias/materias';
+import { IntegrantesProvider } from '../providers/integrantes/integrantes';
 
 @NgModule({
   declarations: [
@@ -44,8 +48,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MensajesProvider,
     CarrerasProvider,
+    MensajesProvider,
+    MateriasProvider,
     CarrerasProvider,
-    MensajesProvider
+    IntegrantesProvider
   ]
 })
 export class AppModule {}

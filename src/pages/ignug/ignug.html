@@ -18,10 +18,11 @@
 <ion-item>
   <!-- el label es para que se vea en el select-->
   <ion-label>
-    Salas
+    Carreras
   </ion-label>
-  <ion-select>
-    <div *ngFor="let carrera of carreras">
+  <ion-select >
+    <div *ngFor="let carrera of carreras" 
+     (click)="selectCarrera(carrera)">
         <ion-option>
             {{carrera.nombre}} 
           </ion-option>
@@ -31,39 +32,82 @@
 
 </ion-item>
 
-<!-- cuerpo-->
-<div class="cuadroMensajes">
 
+  <ion-item>
+ 
+  <ion-label>
+    Materias
+  </ion-label>
+  <ion-select >
+    <div *ngFor="let materia of materias">
+        <ion-option>
+            {{materia.nombre}} 
+          </ion-option>
+    </div>
+    
+  </ion-select>
+
+</ion-item>
+
+
+<!-- mensaje-->
+<div class="cuadroMensajes">
+<div *ngFor="let message of messages">
     <div class="bubble-others">
-        <div class="col-12 writter">
-            <strong>Christian Enriquez:</strong>
+        <div class="col-6 writter">
+
+            <strong>{{message.nombre}}</strong>
+            
+        </div>
+        <div class="col-6 writter">
+
+            {{ message.fecha | date:'medium' }}
+            
         </div>
         <div class="col-12 text-justify">
-            Este es un mensaje de ejemplo
+            {{message.mensaje}}
         </div>
-        <div class="col-12 date">
-            <strong>2018-11-28 17:55</strong>
-        </div>
+        <div class="col-12 text-justify">
+          <img *ngIf="message.foto" src="{{message.foto}}" style="width: 100%" alt="">
+
+          <div *ngIf="message.tipo !='nada'">
+          <div *ngIf="message.tipo !='image'">
+      <img src="../../assets/imgs/google_docs-logo.jpg " style="width: 100%">
+      </div>
+      </div>
+      </div>
     </div>
+</div>
+   
 </div> 
+
+<!--fin mensaje-->
 <div>
  
-  <ion-input type="text" placeholder="Escriba su mensaje">
+  <ion-input type="text" placeholder="Escriba su mensaje" [(ngModel)]="message">
 
   </ion-input>
 </div>
 <ion-grid>
   <ion-row>
     <ion-col col-6>
-      <button ion-button block>ok
+      <button ion-button block (click)="sendMessage()">ok
 
       </button>
     </ion-col>
-    <ion-col col-6>
-        <button ion-button block color="dark">examinar
+    <ion-col col-5>
+      <!--
+<button ion-button block color="dark" #fileInput 
+        (change)="CodificarArchivo($event)" accept="*">examinar
   
         </button>
+      -->  
+        <input type="file" ion-button block color="dark" id="foto" placeholder="Fotografía" #fileInput 
+               (change)="CodificarArchivo($event)" accept="*">
       </ion-col>
   </ion-row>
+  <button ion-button block (click)="limpiar()">limpiar
+
+  </button>
 </ion-grid>
 </ion-content>

@@ -1,6 +1,6 @@
-export interface ChatNombreSala {
+export interface ClaseMaterias {
     "id": string;
     "nombre": string;
 
-
+    
 }
