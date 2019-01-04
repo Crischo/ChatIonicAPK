@@ -1,4 +1,4 @@
-export interface Persona {
+export interface ClasePersona {
     "id":string;
     "identificacion":string;
     "nombre1":string;

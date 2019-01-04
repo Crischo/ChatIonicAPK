@@ -51,6 +51,8 @@ carreras: ClaseCarreras[];
 materias: ClaseMaterias[];
 carreraSeleccionada: ClaseCarreras;
 materiaSeleccionada: ClaseMaterias;
+
+
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
       public carreraService: CarrerasProvider,
@@ -169,18 +171,27 @@ messageRef.push({
   nombre: this.userName,
   mensaje: this.message,
   fecha: Date.now(),
-  carrera: "Carrera Quemada",
-  materia: "Materia Quemada",
+  carrera: this.carreraSeleccionada,
+  materia: this.materiaSeleccionada,
   foto:this.srcFoto,
   tipo: this.fotoType.split('/')[0] });
 
   this.srcFoto = null;
   this.message = null;
-  this.fileInput.nativeElement.value = null;
+  
 
 
 }
 limpiar(){
   this.fileInput.nativeElement.value = null;
+}
+
+seleccionarMateria(materia){
+  this.materiaSeleccionada = materia;
+  console.log('Materia es ', materia);
+}
+seleccionarCarrera(carrera){
+  this.carreraSeleccionada = carrera;
+  console.log('Carrera es ', carrera);
 }
 }

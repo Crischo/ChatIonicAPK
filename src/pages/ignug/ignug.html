@@ -20,9 +20,9 @@
   <ion-label>
     Carreras
   </ion-label>
-  <ion-select >
+  <ion-select [interface]="'action-sheet'" [(ngModel)]="selectCarrera" (ionChange)="seleccionarCarrera(selectCarrera)" >
     <div *ngFor="let carrera of carreras" 
-     (click)="selectCarrera(carrera)">
+     >
         <ion-option>
             {{carrera.nombre}} 
           </ion-option>
@@ -38,7 +38,7 @@
   <ion-label>
     Materias
   </ion-label>
-  <ion-select >
+  <ion-select  [interface]="'action-sheet'" [(ngModel)]="selectMateria" (ionChange)="seleccionarMateria(selectMateria)" >
     <div *ngFor="let materia of materias">
         <ion-option>
             {{materia.nombre}} 

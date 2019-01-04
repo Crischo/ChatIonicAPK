@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoguinPage } from '../pages/loguin/loguin';
 import { IgnugPage } from '../pages/ignug/ignug';
-import { MensajesProvider } from '../providers/mensajes/mensajes';
+
 import { firebase } from '../constantes/credenciales';
 
 //firebase
@@ -20,6 +20,9 @@ import { CarrerasProvider } from '../providers/carreras/carreras';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MateriasProvider } from '../providers/materias/materias';
 import { IntegrantesProvider } from '../providers/integrantes/integrantes';
+import { DocenteProvider } from '../providers/docente/docente';
+import { DocenteAsignaturaProvider } from '../providers/docente-asignatura/docente-asignatura';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,12 +49,14 @@ import { IntegrantesProvider } from '../providers/integrantes/integrantes';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MensajesProvider,
+    
     CarrerasProvider,
-    MensajesProvider,
+    
     MateriasProvider,
     CarrerasProvider,
-    IntegrantesProvider
+    IntegrantesProvider,
+    DocenteProvider,
+    DocenteAsignaturaProvider
   ]
 })
 export class AppModule {}
