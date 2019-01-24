@@ -23,6 +23,7 @@ import { IntegrantesProvider } from '../providers/integrantes/integrantes';
 import { DocenteProvider } from '../providers/docente/docente';
 import { DocenteAsignaturaProvider } from '../providers/docente-asignatura/docente-asignatura';
 import { FormsModule } from '@angular/forms';
+import { LoguinProvider } from '../providers/loguin/loguin';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { FormsModule } from '@angular/forms';
     CarrerasProvider,
     IntegrantesProvider,
     DocenteProvider,
-    DocenteAsignaturaProvider
+    DocenteAsignaturaProvider,
+    LoguinProvider
   ]
 })
 export class AppModule {}

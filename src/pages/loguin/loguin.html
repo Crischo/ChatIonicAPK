@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar >
-    <ion-title>loguin</ion-title>
+    <ion-title>login</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,21 +17,21 @@
     <div class="centrar">
       <!-- imagen-->
     </div>
-    <form >
-      <ion-item>
-        <ion-icon name="person" item-left></ion-icon>
+    
+    
+       
         <ion-label stacked>Usuario</ion-label>
-        <ion-input type="text" maxlength="10"></ion-input>
-      </ion-item>
- 
-      <ion-item>
-        <ion-icon name="md-lock" item-left></ion-icon>
+        <ion-input type="text" maxlength="25" [(ngModel)]="usu"></ion-input>
+      
+     
         <ion-label stacked>Contraseña</ion-label>
-        <ion-input type="password"  maxlength="10"></ion-input>
-      </ion-item>
+        <ion-input type="password"  maxlength="15" [(ngModel)]="con"></ion-input>
+   
       <div padding>
         <button ion-button type="submit" dark block (click)="ignug()" >Ingresar</button>
       </div>
-    </form>
+   <div *ngIf="errorw==true">
+      <ion-label stacked>CError al conectar</ion-label>
+    </div>
   </div>
 </ion-content>
